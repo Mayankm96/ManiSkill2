@@ -52,7 +52,7 @@ def parse_args():
     parser.add_argument("-e", "--env-id", type=str, default="LiftCube-v0")
     parser.add_argument(
         "-n",
-        "--n-envs",
+        "--num_envs",
         type=int,
         default=8,
         help="number of parallel envs to run. Note that increasing this does not increase rollout size",
@@ -65,7 +65,7 @@ def parse_args():
     parser.add_argument(
         "--max-episode-steps",
         type=int,
-        default=200,
+        default=300,
         help="Max steps per episode before truncating them",
     )
     parser.add_argument(
@@ -81,11 +81,11 @@ def parse_args():
 def main():
     args = parse_args()
     env_id = args.env_id
-    num_envs = args.n_envs
+    num_envs = args.num_envs
     max_episode_steps = args.max_episode_steps
     total_step = args.total_timesteps
-    control_freq = 250
-    sim_freq = 500
+    control_freq = 60
+    sim_freq = 120
 
     obs_mode = "state"
     control_mode = "pd_joint_pos"

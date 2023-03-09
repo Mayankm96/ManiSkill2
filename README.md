@@ -1,3 +1,15 @@
+```bash
+
+cd benchmark
+# lift
+python test_gym.py -e LiftCube-v0 --num_envs 128
+# cabinet
+python -m mani_skill2.utils.download_asset partnet_mobility_cabinet
+python test_gym.py -e OpenCabinetDoor-v1 --num_envs 128
+```
+
+---
+
 # ManiSkill2
 
 ![teaser](figures/teaser_v2.jpg)
